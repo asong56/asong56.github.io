@@ -1,0 +1,7 @@
+---
+REV: 20250913T132530Z
+TAG: mood, insight
+LNG: en-US
+---
+
+Once I got here, my father gave me a phone, which I could open on my own. I am again addicted to games such as bloxd.io and efootball. As a result, my father confiscated my phone.

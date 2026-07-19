@@ -56,7 +56,7 @@
       <a href="{{ link.url }}"
          aria-label="{{ link.label }}"
          {% if link.rel %}rel="{{ link.rel }}"{% endif %}
-         {% if link.url.startswith('http') %}target="_blank"{% endif %}>
+         {% if link.url and link.url.startswith('http') %}target="_blank"{% endif %}>
         {{ link.icon | safe }}
       </a>
       {% endfor %}

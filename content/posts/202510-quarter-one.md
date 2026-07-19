@@ -1,0 +1,7 @@
+---
+REV: 20251028T090001Z
+TAG: mood, insight
+LNG: en-US
+---
+
+I got three ‘A’s on my Honors Precalculus tests, which rescued me from the B+ grade before, but I still couldn’t figure out why my Honors Environmental Science tests were always B. I kept my other courses A until the end of quarter 1.

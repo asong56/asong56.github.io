@@ -21,7 +21,7 @@
       <li>
         <a href="{{ link.url }}"
            {% if link.rel %}rel="{{ link.rel }}"{% endif %}
-           {% if link.url.startswith('http') %}target="_blank"{% endif %}>
+           {% if link.url and link.url.startswith('http') %}target="_blank"{% endif %}>
           {{ link.label }}
         </a>
       </li>

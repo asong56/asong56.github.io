@@ -1,0 +1,9 @@
+---
+REV: 20260602T160507Z
+TAG: mood, insight
+LNG: en-US
+---
+
+Oh my god! Matter is such a bad platform. I deleted my account for over 5 months, and it kept sending me emails during this period. I deleted it at the manage subscriptions tab in Gmail, and replied to them when they sent me an email, but those made no use. They sent me another one today.
+
+These days, my parents are considering letting me get back to China, due to my bad GPA.

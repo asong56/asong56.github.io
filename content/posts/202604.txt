@@ -1,0 +1,31 @@
+---
+NAM: asong56
+REV: 20260420T220002Z
+LOC: Lexington, MA
+TAG: mood, insight
+LNG: en-US
+---
+I noticed something called Moltbook, which is a social playground for 1500k agents. That is a great thing. I was wondering whether I can use many agents to build a similar playground that simulates real life. In my thoughts, every agent should be an individual in the ‘world’, and they have families, assets and pretty much like real life. Then the ‘world’ might evolve and might be something like the world 20 years later.
+These days, I should be focused on these things: Diatom Browser, Onyx Engine, TardiTalk, Aeolian Player, AP Micro, AP CSP, GPA.
+
+For this article, I really don't want Apple to change its idea that privacy is fundamental. Privacy is the most vital point in the AI ages, and Apple is my favourite company -- for its targets. I have some ideas about using caveman to compress token usage.
+
+I tried to use Unsloth in Hugging Face and Kaggle to distill my own SLM, but they both failed. I don’t know why, maybe I should try later. I read one article on self-distilling, which might be useful for me to fine-tune my SLM.
+
+My counselor talked with me, and wanted me to adjust my sophomore class schedule because it’s very aggressive. I personally believe that I can do that - if I don’t believe that, how can I do that?
+
+My mother asked me to build a Wechat app for her and my sister as a lunch menu, which can keep a record of their lunch choices. Actually I don’t want to do that because I hate Wechat. I decided to do that in PWA form.
+
+
+I read an article talking about how a product manager is the best fit for AI. That's true. For me, I am using vibe coding a lot this month - on Diatom, TardiTalk, Aeolian - and AI does a good job - only you have to check the bugs - which requires similar skills as programming on my own. Under the help of AI, I can continue 6 to 7 or more projects at the same time period, with my coming up with good ideas. Actually I am good at coming up with ideas.
+
+I read about AI’s negative effects. They're making humans think less by themselves and also believe in wrong statements, and might also cause mental illnesses. Some free AI (such as Perplexity and Gemini) do have a huge negative impact on me - I can feel that. Also, their hallucination causes thousands of mistakes, which bothers  the workflow pretty much.
+
+Love these statements!
+/ https://rajnandan.com/posts/taste-in-the-age-of-ai-and-llms/
+/ https://www.hollandtech.net/claude-is-not-your-architect/
+
+I wrote this on 4/16: two days before was my birthday — I don’t even know what I was doing these days. Feeling bad.
+Today is 4/20, I went out to exercise, trying to recover my status, my speed and my energy, but the wind is so fierce and I have a headache.
+
+I didn’t really focus on my school work this month — so I currently got 4 Bs in my classes.

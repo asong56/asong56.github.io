@@ -1,0 +1,17 @@
+---
+REV: 20260522T071354Z
+TAG: mood, insight
+LNG: en-US
+---
+
+I cramped for AP micro, which is much easier than I thought — but I found that I was wrong on one of the mcqs, not so good. God bless you, Song.
+
+My father blocked Github — I have to — I MUST solve it. F*k. Sorry mom, I said dirty words.
+
+Two quotes:
+Every 'sincere' heart has a 'sin' to hide. 
+Everything "beloved" was once just "loved". 
+
+A bird just missed me by a hair! A massive splat landed exactly 4cm from my feet. Honestly, I feel like I just used up all my luck for the month by NOT getting hit. I should probably go buy a lottery ticket now.
+
+This week (5/18~24) is so hot — I only wore one single shirt, but I was still watered. The whole week will be around 20 degrees celsius, while some were as high as 35 degrees. I was wondering if the Boston area is this hot, even hotter than Shanghai.
