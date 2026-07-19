@@ -1,4 +1,5 @@
 Flask
 Frozen-Flask
 Pillow
-requests
+PyYAML
+Markdown

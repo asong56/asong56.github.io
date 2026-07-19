@@ -1,0 +1,19 @@
+# Build output
+build/
+
+# Database (rebuilt by sync.py)
+content.db
+
+# CSS tools and ACDN cache (rebuilt by scss.py)
+.tools/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# pcm/ is intentionally public — do not add it here

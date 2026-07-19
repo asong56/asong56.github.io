@@ -1,0 +1,50 @@
+{
+  "_comment": "This file is never loaded. It documents the shape of each data file.",
+
+  "seo.json": {
+    "title":       "Page title shown in browser tab",
+    "description": "Meta description — one sentence",
+    "author":      "Your name",
+    "canonical":   "https://yourdomain.github.io",
+    "og_title":    "Open Graph title (social share)",
+    "og_description": "Open Graph description",
+    "og_image":    "Absolute URL to og-card.png"
+  },
+
+  "profile.json": {
+    "name":     "Full name",
+    "handle":   "GitHub username",
+    "tagline":  "One sentence that defines your POV — not a job title",
+    "location": "City, State",
+    "links": [
+      { "label": "Link label", "url": "https://...", "rel": "me | noopener" }
+    ]
+  },
+
+  "work.json": [
+    {
+      "name":      "project-name (lowercase, used as slug)",
+      "questions": "One sentence: what assumption does this project challenge?",
+      "description": "One or two sentences on what it actually does",
+      "url":       "GitHub or live URL",
+      "tags":      ["Language or tag"],
+      "stars":     42
+    }
+  ],
+
+  "now.json": {
+    "building": "What you're actively making",
+    "reading":  "What you're reading or absorbing",
+    "thinking": "An open question in your head",
+    "applying": "Optional — remove key to hide from page"
+  },
+
+  "channels.json": [
+    {
+      "slug":        "notes",
+      "label":       "Notes",
+      "description": "One sentence shown on the channel index page",
+      "nav":         true
+    }
+  ]
+}

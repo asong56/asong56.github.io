@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Cicada",
+    "questions": "Does a whiteboard need more than drawing?",
+    "description": "Single-file infinite canvas. Less than 1 MB, no login, share via link.",
+    "url": "https://github.com/asong56/Cicada",
+    "tags": ["HTML", "Canvas"],
+    "stars": 47
+  },
+  {
+    "name": "Rudoc",
+    "questions": "Does a document converter need to be heavy?",
+    "description": "4 MB Pandoc alternative. Converts in 18 ms. Same input always gives same output.",
+    "url": "https://github.com/asong56/rudoc",
+    "tags": ["Rust"],
+    "stars": null
+  },
+  {
+    "name": "Captain",
+    "questions": "Do you need ten browser extensions?",
+    "description": "One extension that absorbs six: blocklist, WebRTC, UA switcher, proxy, command palette, site timer.",
+    "url": "https://github.com/asong56/captain",
+    "tags": ["JavaScript"],
+    "stars": null
+  },
+  {
+    "name": "VXLogic",
+    "questions": "Does an agent need a full physics engine?",
+    "description": "Sparse object-state representation for lightweight physical event prediction — no color, no texture, just topology.",
+    "url": null,
+    "tags": ["Python", "Research"],
+    "stars": null
+  },
+  {
+    "name": "Urban Scaling",
+    "questions": "What actually scales with city size?",
+    "description": "Simulation of Bettencourt scaling laws — wealth distribution, Gini coefficient, emergent growth.",
+    "url": "https://github.com/asong56/Urban-Scaling-Simulation",
+    "tags": ["Python", "Data"],
+    "stars": null
+  },
+  {
+    "name": "OhPDF",
+    "questions": "Why does a PDF tool need to live on your machine?",
+    "description": "12-function PDF workstation. Open, use, close. No residue.",
+    "url": "https://github.com/asong56/ohpdf",
+    "tags": ["Rust", "Tauri"],
+    "stars": null
+  }
+]

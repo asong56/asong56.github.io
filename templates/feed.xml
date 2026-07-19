@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ data.seo.title }}</title>
+  <subtitle>{{ data.seo.description }}</subtitle>
+  <link href="{{ data.seo.canonical }}/feed.xml" rel="self"/>
+  <link href="{{ data.seo.canonical }}/"/>
+  <id>{{ data.seo.canonical }}/</id>
+  {% if entries %}
+  <updated>{{ entries[0][1]['rev'] | iso_rev }}</updated>
+  {% endif %}
+  <author><name>{{ data.profile.name }}</name></author>
+
+  {% for channel_slug, entry in entries %}
+  <entry>
+    <title>{{ entry['title'] }}</title>
+    <link href="{{ data.seo.canonical }}/{{ channel_slug }}/{{ entry['slug'] }}/"/>
+    <id>{{ data.seo.canonical }}/{{ channel_slug }}/{{ entry['slug'] }}/</id>
+    {% if entry['rev'] %}
+    <updated>{{ entry['rev'] | iso_rev }}</updated>
+    {% endif %}
+    <content type="html"><![CDATA[{{ entry['content'] }}]]></content>
+  </entry>
+  {% endfor %}
+
+</feed>

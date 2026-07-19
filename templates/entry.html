@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{ entry['title'] }} · {{ data.seo.title }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ entry['title'] }}">
+<link rel="canonical"    href="{{ data.seo.canonical }}/{{ channel.slug }}/{{ entry['slug'] }}/">
+{% endblock %}
+
+{% block body %}
+<main>
+
+  <a class="back-link" href="/{{ channel.slug }}/">← {{ channel.label }}</a>
+
+  <article lang="{{ entry['lng'] }}" aria-labelledby="entry-title">
+
+    <header class="entry-header">
+      <h1 id="entry-title">{{ entry['title'] }}</h1>
+
+      <div class="entry-meta">
+        {% if entry['rev'] %}
+        <time datetime="{{ entry['rev'] | iso_rev }}">{{ entry['rev'] | format_rev }}</time>
+        {% endif %}
+        {% if entry['tag'] %}
+        <span>{{ entry['tag'] }}</span>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="entry-body" lang="{{ entry['lng'] }}">
+      {{ entry['content'] | safe }}
+    </div>
+
+  </article>
+
+</main>
+{% endblock %}

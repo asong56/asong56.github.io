@@ -1,396 +1,512 @@
-@import "core";
-@import "ui/src/scss/main";
+// ─────────────────────────────────────────────────────────────────────────────
+// ACDN Design Language
+// Source: https://raw.githubusercontent.com/asong56/acdn/<TAG>/src/scss/main.scss
+// To upgrade: change the URL in scss.py → ACDN_URL constant, then rebuild.
+// Local cache lives at .tools/acdn/ — never edit it directly.
+// ─────────────────────────────────────────────────────────────────────────────
+@use "acdn/src/scss/main" as *;    // resolved via --load-path .tools in scss.py
 
 
-// =================================================
-// 1. LAYOUT SYSTEM
-// =================================================
+// ─────────────────────────────────────────────────────────────────────────────
+// 1. LAYOUT
+// ─────────────────────────────────────────────────────────────────────────────
 
-section {
-    padding: 100px 24px;
-    max-width: 900px;
-    margin: 0 auto;
+body {
+  // Subtle fixed background — same philosophy as original site
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(to bottom, oklch(90% 0.004 260 / 0.3) 0%, var(--color-bg) 80%),
+    url("../images/background.webp");
+  background-size: cover;
+  background-position: center 20%;
+  background-attachment: fixed;
 
-    // 使用统一的 fade-in 体系
-    @extend .fade-in;
+  @media (prefers-color-scheme: dark) {
+    background-image:
+      linear-gradient(to bottom, oklch(8% 0.004 260 / 0.6) 0%, var(--color-bg) 80%),
+      url("../images/background.webp");
+  }
+}
 
-    @media (max-width: 768px) {
-        padding: 60px 20px;
+main {
+  // Override ACDN's default max-width for this single-column layout
+  max-width: 720px;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 2. SITE NAVIGATION
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Sticky glass bar — ACDN's nav[aria-label='Main Navigation'] handles most of it.
+// We just need position + full-width bleed.
+[aria-label="Main Navigation"] {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  // Bleed edge-to-edge while content stays constrained
+  margin-inline: calc(-1 * (100vw - 720px) / 2);
+  padding-inline: calc((100vw - 720px) / 2 + 24px);
+
+  @media (max-width: 720px) {
+    margin-inline: -24px;
+    padding-inline: 24px;
+  }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 3. HERO
+// ─────────────────────────────────────────────────────────────────────────────
+
+#hero {
+  padding-block: 96px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  figure {
+    margin: 0 0 8px;
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      // Intentionally small — presence, not performance
     }
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    margin: 0;
+    letter-spacing: -0.04em;
+  }
+
+  p.tagline {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 48ch;
+    line-height: 1.5;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    list-style: none;
+    padding: 0;
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: none;
+      padding: 4px 0;
+
+      @include motion {
+        transition: color var(--dur-fast, 120ms) ease;
+      }
+
+      &:hover { color: var(--color-text); }
+
+      // Suppress the external ↗ from ACDN base on these nav-style links
+      &::after { display: none; }
+    }
+
+    li + li::before {
+      content: "·";
+      color: var(--color-border);
+      margin-right: 8px;
+    }
+  }
 }
 
-.grid {
-    gap: var(--gap);
-}
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 4. SECTION RHYTHM
+// ─────────────────────────────────────────────────────────────────────────────
 
+.site-section {
+  padding-block: 64px;
+  border-top: 1px solid var(--color-border);
 
-// =================================================
-// 2. SECTION HEADER
-// =================================================
+  > header {
+    margin-bottom: 32px;
 
-.section-header {
-    text-align: center;
-    margin-bottom: 48px;
-
-    p {
-        color: var(--blue);
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
+    small {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 4px;
     }
 
     h2 {
-        margin: 0;
-        font-size: 32px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
+      margin: 0;
+      font-size: var(--text-xl);
+      letter-spacing: -0.02em;
     }
+  }
 }
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 5. WORK (projects)
+// ─────────────────────────────────────────────────────────────────────────────
 
-// =================================================
-// 3. CARD EXTENSIONS
-// =================================================
-
-.card {
-
-    p {
-        font-size: 15px;
-        line-height: 1.5;
-        color: var(--text-tert);
-        margin-bottom: 16px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+.work-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+// Each project is an <article> inside a <li>
+.work-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding-block: 20px;
+  border-top: 1px solid var(--color-border);
 
+  &:first-child { border-top: none; }
 
-// Project Card
-a.project.card {
+  // Wrap the link around name + question
+  a {
+    text-decoration: none;
+    grid-column: 1;
+    grid-row: 1;
 
-    @extend .is-interactive;
-
-    img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        border-bottom: 1px solid var(--glass-border);
+    @include motion {
+      transition: color 120ms ease;
     }
 
-    .p-card {
-        padding: var(--gap);
+    &::after { display: none; } // suppress ACDN external ↗ here
+  }
+
+  h3 {
+    margin: 0;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    display: inline;
+
+    @include motion {
+      transition: color 120ms ease;
     }
+  }
 
-    hgroup {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 8px;
+  &:hover h3 { color: var(--color-accent); }
 
-        h3,
-        i {
-            transition: color 0.2s var(--ease-spring);
-        }
+  .work-question {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 2px 0 0;
+    line-height: 1.4;
+  }
 
-        h3 {
-            margin: 0;
-            font-size: 20px;
-            color: var(--text-primary);
-        }
+  .work-desc {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 6px 0 0;
+    line-height: 1.5;
+  }
 
-        i {
-            font-size: 18px;
-            color: var(--text-tert);
-        }
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    @media (hover: hover) {
-        &:hover hgroup {
-
-            h3,
-            i {
-                color: var(--blue);
-            }
-        }
-    }
-}
-
-
-
-// =================================================
-// 4. NAVIGATION
-// =================================================
-
-nav {
-    position: fixed;
-    top: 24px;
-    left: 24px;
-    z-index: 100;
-
+  .work-meta {
+    grid-column: 2;
+    grid-row: 1;
     display: flex;
-    gap: 10px;
-
-    @media (max-width: 768px) {
-        display: none;
-    }
-
-    a {
-        width: 36px;
-        height: 36px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        color: map-get($ios-colors, 'text-primary');
-
-        @include std-thin;
-        @include tap-effect;
-
-        @media (hover: hover) {
-            &:hover {
-                background: rgba(255, 255, 255, 0.9);
-            }
-        }
-
-        i {
-            font-size: 16px;
-            width: 1em;
-            height: 1em;
-            line-height: 1;
-        }
-    }
-}
-
-
-
-// =================================================
-// 5. HERO
-// =================================================
-
-#hero {
-    min-height: 90vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 8px;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
 
-    gap: 16px;
-    text-align: center;
-
-    figure {
-        margin-bottom: 8px;
-
-        img {
-            width: 120px;
-            height: 120px;
-
-            border-radius: 50%;
-            border: 4px solid var(--card);
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-    }
-
-    h1 {
-        margin: 0;
-        font-size: 48px;
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
-
-    p {
-        margin: 0;
-        font-size: 18px;
-        color: var(--text-sec);
-    }
-
-    address.location {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-
-        margin-bottom: 16px;
-
-        font-size: 14px;
-        font-style: normal;
-
-        color: var(--text-tert);
-    }
-
-
-    menu {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-
-        margin: 0;
-        padding: 0;
-
-        list-style: none;
-
-        li {
-
-            a {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-
-                padding: 14px 28px;
-                border-radius: 99px;
-
-                font-weight: 600;
-
-                @include tap-effect;
-
-                @media (hover: hover) {
-                    &:hover {
-                        transform: translateY(-6px);
-                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
-                    }
-                }
-            }
-
-
-            &:first-child a {
-                background: var(--blue);
-                color: #fff;
-
-                box-shadow: 0 4px 12px
-                    color-mix(in srgb, var(--blue), transparent 75%);
-            }
-
-
-            &:last-child a {
-                @include std-thin;
-                color: var(--blue);
-            }
-        }
-    }
-}
-
-
-
-// =================================================
-// 6. ABOUT
-// =================================================
-
-#about .card {
-    padding: 0;
-
-    > div:first-child {
-        display: flex;
-        gap: var(--gap);
-
-        padding: calc(var(--gap) * 1.5);
-
-        align-items: flex-start;
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        > div {
-            flex: 1;
-
-            p {
-                font-size: 17px;
-                line-height: 1.6;
-                color: var(--text-sec);
-            }
-        }
-
-        figure {
-            margin: 0;
-            flex-shrink: 0;
-
-            img {
-                width: 140px;
-                height: 180px;
-
-                object-fit: cover;
-                border-radius: 12px;
-            }
-        }
-    }
-
-
-    > div:last-child {
-        padding: var(--gap) calc(var(--gap) * 1.5);
-
-        background: color-mix(in srgb, var(--bg), transparent 50%);
-        border-top: 1px solid var(--glass-border);
-
-        p {
-            margin-bottom: 12px;
-
-            font-size: 11px;
-            font-weight: 600;
-
-            color: var(--text-tert);
-        }
-
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-
-            margin: 0;
-            padding: 0;
-
-            list-style: none;
-        }
-    }
-}
-
-
-
-// =================================================
-// 7. SKILLS
-// =================================================
-
-#skills .card > div {
+  .work-tags {
+    grid-column: 1;
+    grid-row: 4;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 6px;
+    margin-top: 8px;
+  }
 }
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 6. NOW
+// ─────────────────────────────────────────────────────────────────────────────
 
-// =================================================
-// 8. FOOTER
-// =================================================
+.now-grid {
+  display: grid;
+  gap: 0;
 
-footer {
-    padding: 48px var(--gap);
+  dt {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0;
 
-    text-align: center;
-    font-size: 13px;
+    &:first-child { border-top: none; padding-top: 0; }
+  }
 
-    color: var(--text-tert);
-    background: var(--bg);
+  dd {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    text-align: left;
+    font-weight: 400;
+    margin: 4px 0 16px;
+    padding-bottom: 0;
+    line-height: 1.6;
 
-    border-top: 1px solid var(--glass-border);
+    &:last-child { margin-bottom: 0; }
+  }
+}
 
-    span {
-        margin: 0 2px;
-        color: #FF3B30;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 7. CHANNEL INDEX (notes listing)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-item {
+  padding-block: 18px;
+  border-top: 1px solid var(--color-border);
+
+  &:first-child { border-top: none; }
+
+  a {
+    display: block;
+    text-decoration: none;
+
+    &:hover h2 { color: var(--color-accent); }
+    &::after { display: none; }
+  }
+
+  h2 {
+    margin: 0 0 4px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+
+    @include motion { transition: color 120ms ease; }
+  }
+
+  .entry-meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 8. ENTRY (single post)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.entry-header {
+  padding-block: 48px 32px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: var(--text-2xl);
+    letter-spacing: -0.03em;
+    margin: 0 0 12px;
+    line-height: 1.15;
+  }
+
+  .entry-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+}
+
+.entry-body {
+  font-size: 1.0625rem; // 17px — slightly more comfortable for reading
+  line-height: 1.75;
+  color: var(--color-text);
+  max-width: 65ch;
+
+  h2, h3, h4 {
+    color: var(--color-text);
+    margin-top: 2em;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 1.25em; }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  blockquote {
+    margin: 1.5em 0;
+    padding: 14px 20px;
+    border-left: 2px solid var(--color-accent);
+    background: var(--color-surface);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--color-text-muted);
+
+    p { margin: 0; }
+  }
+
+  pre {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    font-size: var(--text-sm);
+    margin: 1.5em 0;
+  }
+
+  ul, ol {
+    padding-left: 1.5em;
+    margin: 0 0 1.25em;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 1.5em 0;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2em 0;
+  }
+
+  // CJK reading comfort
+  &[lang^="zh"], &[lang^="ja"] {
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 9. BACK LINK
+// ─────────────────────────────────────────────────────────────────────────────
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding-block: 20px;
+
+  @include motion { transition: color 120ms ease; }
+
+  &:hover { color: var(--color-text); }
+  &::after { display: none; }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 10. FOOTER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.site-footer {
+  padding-block: 48px 40px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  a {
+    display: flex;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 4px;
+
+    @include motion {
+      transition: color 120ms ease;
     }
+
+    &:hover { color: var(--color-text-muted); }
+
+    // suppress ACDN external link arrow
+    &::after { display: none; }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+  }
+}
+
+.site-footer small {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 11. TAGS (reused across work + entries)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.tag {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  line-height: 1.4;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 12. 404
+// ─────────────────────────────────────────────────────────────────────────────
+
+.not-found {
+  padding-block: 120px;
+  text-align: center;
+
+  h1 {
+    font-size: var(--text-2xl);
+    margin: 0 0 12px;
+  }
+
+  p {
+    color: var(--color-text-muted);
+    margin: 0 0 24px;
+  }
 }

@@ -1,159 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <title>{{ data.seo.title }}</title>
-        
-        <meta name="description" content="{{ data.seo.description }}" />
-        <meta name="author" content="{{ data.seo.author }}" />
-        <link rel="canonical" href="{{ data.seo.canonical }}" />
-        <meta name="google-site-verification" content="PHhw6JXwL0IBOD9ozR4K5VOhAHEkHTWo3Rl6Qum9qzo" />
+{% extends "base.html" %}
 
-        <meta http-equiv="Content-Security-Policy" content="
-            default-src 'self'; 
-            script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; 
-            style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
-            font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; 
-            img-src 'self' data: https:;
-            manifest-src 'self';
-        ">
+{% block body %}
+<main>
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ data.seo.canonical }}" />
-        <meta property="og:title" content="{{ data.seo.og_title }}" />
-        <meta property="og:description" content="{{ data.seo.og_description }}" />
-        <meta property="og:image" content="{{ data.seo.og_image }}">
+  {# ── HERO ─────────────────────────────────────────────────────────────── #}
+  <section id="hero" aria-labelledby="hero-name">
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="{{ data.seo.canonical }}" />
-        <meta property="twitter:title" content="{{ data.seo.twitter_title }}" />
-        <meta property="twitter:description" content="{{ data.seo.twitter_description }}" />
-        <meta property="twitter:image" content="{{ data.seo.twitter_image }}">
+    <figure>
+      <img src="{{ url_for('static', filename='images/profile.webp') }}"
+           alt="{{ data.profile.name }}"
+           width="64" height="64"
+           fetchpriority="high" decoding="sync">
+    </figure>
 
-        <meta name="theme-color" content="#F2F2F7" />
-        <meta name="apple-mobile-web-app-title" content="Barry's Portfolio" />
+    <h1 id="hero-name">{{ data.profile.name }}</h1>
+    <p class="tagline">{{ data.profile.tagline }}</p>
 
-        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-96x96.png') }}" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}" />
-        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}" />
-        <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}" />
+    <ul class="hero-links" role="list">
+      {% for link in data.profile.links %}
+      <li>
+        <a href="{{ link.url }}"
+           {% if link.rel %}rel="{{ link.rel }}"{% endif %}
+           {% if link.url.startswith('http') %}target="_blank"{% endif %}>
+          {{ link.label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </section>
 
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "{{ data.seo.author }}",
-            "alternateName": "Barry",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Lexington High School"
-            },
-            "description": "{{ data.seo.description }}",
-            "url": "{{ data.seo.canonical }}",
-            "sameAs": [
-                "https://github.com/BarryS27",
-                "https://medium.com/@BarryS27"
-            ]
-        }
-        </script>
-    </head>
-    <body>
 
-        {% import "macros.html" as macros with context %}
+  {# ── WORK ─────────────────────────────────────────────────────────────── #}
+  <section id="work" class="site-section fade-in" aria-labelledby="work-heading">
+    <header>
+      <small>Projects</small>
+      <h2 id="work-heading">Work</h2>
+    </header>
 
-        <nav aria-label="Navigation">
-            <a href="#hero" aria-label="Home" title="Home"><span class="fa-solid fa-house" aria-hidden="true"></span></a>
-            <a href="#about" aria-label="About Me" title="About Me"><span class="fa-solid fa-user" aria-hidden="true"></span></a>
-            <a href="#now" aria-label="Current Focus" title="Current Focus"><span class="fa-solid fa-clock" aria-hidden="true"></span></a>
-            <a href="#skills" aria-label="Capabilities" title="Capabilities"><span class="fa-solid fa-bolt" aria-hidden="true"></span></a>
-            <a href="#awards" aria-label="Awards" title="Awards"><span class="fa-solid fa-trophy" aria-hidden="true"></span></a>
-            <a href="#projects" aria-label="Portfolio" title="Portfolio"><span class="fa-solid fa-folder" aria-hidden="true"></span></a>
-        </nav>
+    <ul class="work-list" role="list">
+      {% for project in data.work %}
+      <li>
+        <article class="work-item">
 
-        <main>
-            <section id="hero" class="fade-in" aria-labelledby="hero-heading">
-                <figure><img src="{{ url_for('static', filename='images/profile.webp') }}" alt="Barry's Profile Picture" fetchpriority="high" decoding="sync"></figure>
-                <hgroup>
-                    <h1>Hello, I'm Bairu Song 👋</h1>
-                    <p itemprop="jobTitle">{{ data.profile.title }}</p>
-                </hgroup>
-                <address class="location"><span class="fa-solid fa-location-dot" aria-hidden="true"></span>{{ data.profile.location }}</address>
-                
-                <menu>
-                    <li><a href="#projects"><span>View My Work</span></a></li>
-                    <li><a href="https://forms.gle/f3LuCK4xRNjYVaaJ8" target="_blank" rel="noopener noreferrer"><span>Get in Touch</span></a></li>
-                </menu>
-            </section>
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
+             aria-label="{{ project.name }}">
+            <h3>{{ project.name }}</h3>
+          </a>
 
-            {% call macros.section("about", "About Me", "My Journey") %}
-                <div>
-                    <div>
-                        {% for paragraph in data.about.paragraphs %}
-                            <p>{{ paragraph }}</p>
-                        {% endfor %}
-                    </div>
-                    <figure><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=800&fit=crop" alt="A glimpse into my daily life" loading="lazy" decoding="async"><figcaption class="sr-only">My daily workspace</figcaption></figure>
-                </div>
+          <p class="work-question">{{ project.questions }}</p>
+          <p class="work-desc">{{ project.description }}</p>
 
-                <div>
-                    <p>Interests</p>
-                    <ul>
-                        {% for interest in data.about.interests %}
-                            <li>{{ macros.render_item(interest.label, icon=interest.icon, color=interest.color) }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endcall %}
+          {% if project.stars %}
+          <div class="work-meta">
+            <span>★ {{ project.stars }}</span>
+          </div>
+          {% endif %}
 
-            {% call macros.section("now", "Current Focus", "What I'm Up To") %}
-                <dl>
-                    {% for key, value in data.now.items() %}
-                        <div class="row">
-                            <dt>{{ key | capitalize }}</dt>
-                            <dd>{{ value }}</dd>
-                        </div>
-                    {% endfor %}
-                </dl>
-            {% endcall %}
+          {% if project.tags %}
+          <div class="work-tags">
+            {% for tag in project.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
 
-            {% call macros.section("skills", "Capabilities", "Tech Stack") %}
-                {% for category in data.skills %}
-                    {{ macros.render_skill_category(category) }}
-                {% endfor %}
-            {% endcall %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
 
-            {% call macros.section("awards", "Certifications", "Awards & Honors", type="grid") %}
-                {% for award in data.awards %}
-                    {{ macros.render_card(award.title, award.description, award.link) }}
-                {% endfor %}
-            {% endcall %}
 
-            {% call macros.section("projects", "Portfolio", "Featured Work", type="grid") %}
-                {% for project in data.projects %}
-                    {{ macros.render_card(
-                        title=project.title,
-                        description=project.description,
-                        link=project.link,
-                        tags=project.tags,
-                        image=project.image,
-                        color=project.color
-                    ) }}
-                {% endfor %}
-            {% endcall %}
-        </main>
+  {# ── NOW ──────────────────────────────────────────────────────────────── #}
+  <section id="now" class="site-section fade-in" aria-labelledby="now-heading">
+    <header>
+      <small>Status</small>
+      <h2 id="now-heading">Now</h2>
+    </header>
 
-        <footer>
-            <p>© 2026 Bairu Song. Made with <span class="fa-solid fa-heart" aria-label="love"></span> in Lexington</p>
-        </footer>
+    <dl class="now-grid">
+      {% for key, value in data.now.items() %}
+      <dt>{{ key }}</dt>
+      <dd>{{ value }}</dd>
+      {% endfor %}
+    </dl>
+  </section>
 
-    </body>
-</html>
+
+  {# ── NOTES PREVIEW ────────────────────────────────────────────────────── #}
+  {% for ch in data.channels if ch.nav %}
+  <section id="{{ ch.slug }}" class="site-section fade-in" aria-labelledby="{{ ch.slug }}-heading">
+    <header>
+      <small>Writing</small>
+      <h2 id="{{ ch.slug }}-heading"><a href="/{{ ch.slug }}/">{{ ch.label }}</a></h2>
+    </header>
+    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">
+      {{ ch.description }}
+      <a href="/{{ ch.slug }}/">Read →</a>
+    </p>
+  </section>
+  {% endfor %}
+
+</main>
+{% endblock %}
