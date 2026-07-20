@@ -19,7 +19,7 @@
     <ul class="hero-links" role="list">
       {% for link in data.profile.links %}
       <li>
-        <a href="{{ link.url }}"
+        <a href="{{ link.url or '#' }}"
            {% if link.rel %}rel="{{ link.rel }}"{% endif %}
            {% if link.url and link.url.startswith('http') %}target="_blank"{% endif %}>
           {{ link.label }}
@@ -43,10 +43,14 @@
       <li>
         <article class="work-item">
 
+          {% if project.url %}
           <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
              aria-label="{{ project.name }}">
             <h3>{{ project.name }}</h3>
           </a>
+          {% else %}
+          <h3>{{ project.name }}</h3>
+          {% endif %}
 
           <p class="work-question">{{ project.questions }}</p>
           <p class="work-desc">{{ project.description }}</p>
@@ -88,7 +92,7 @@
   </section>
 
 
-  {# ── NOTES PREVIEW ────────────────────────────────────────────────────── #}
+  {# ── POSTS PREVIEW ────────────────────────────────────────────────────── #}
   {% for ch in data.channels if ch.nav %}
   <section id="{{ ch.slug }}" class="site-section fade-in" aria-labelledby="{{ ch.slug }}-heading">
     <header>

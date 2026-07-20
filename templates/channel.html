@@ -13,12 +13,10 @@
   <a class="back-link" href="/">← {{ data.profile.handle }}</a>
 
   <section aria-labelledby="channel-heading">
-    <header class="entry-header">
+    <header class="channel-header">
       <h1 id="channel-heading">{{ channel.label }}</h1>
       {% if channel.description %}
-      <p style="color: var(--color-text-muted); margin: 0; font-size: var(--text-sm);">
-        {{ channel.description }}
-      </p>
+      <p class="channel-desc">{{ channel.description }}</p>
       {% endif %}
     </header>
 
@@ -40,7 +38,7 @@
     </ul>
 
     {% else %}
-    <p style="color: var(--color-text-muted); font-size: var(--text-sm); padding-top: 16px;">
+    <p class="empty-hint">
       Nothing here yet — add <code>.md</code> files to
       <code>content/{{ channel.slug }}/</code> and run <code>python sync.py</code>.
     </p>
