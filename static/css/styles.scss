@@ -278,8 +278,30 @@ main {
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 7. CHANNEL INDEX (notes listing)
+// 7. CHANNEL INDEX (posts listing)
 // ─────────────────────────────────────────────────────────────────────────────
+
+.channel-header {
+  padding-block: 48px 32px;
+
+  h1 {
+    font-size: var(--text-2xl);
+    letter-spacing: -0.03em;
+    margin: 0 0 8px;
+  }
+}
+
+.channel-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.empty-hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding-top: 16px;
+}
 
 .entry-list {
   list-style: none;
