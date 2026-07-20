@@ -186,7 +186,8 @@ def compile_scss(
         sass_cmd = [
             str(sass_bin),
             "--no-source-map",
-            "--load-path", str(acdn_load_path),   # resolves "acdn/src/scss/main"
+            "--load-path", str(acdn_load_path),          # resolves "acdn/src/scss/..."
+            "--load-path", str(acdn_load_path / "acdn" / "src" / "scss"),  # resolves internal @use "variables"
             "--load-path", "static/css",
             str(source),
             str(intermediate),
