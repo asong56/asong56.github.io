@@ -35,8 +35,8 @@ LIGHTNINGCSS_VERSION: Final[str]  = os.getenv("LIGHTNINGCSS_VERSION", "1.27.0")
 TOOLS_DIR:            Final[Path] = Path(".tools")
 BIN_DIR:              Final[Path] = TOOLS_DIR / "bin"
 
-SOURCE_FILE: Final[Path] = Path("src/scss/main.scss")
-TARGET_FILE: Final[Path] = Path("static/css/acdn.min.css")
+SOURCE_FILE: Final[Path] = Path("static/css/styles.scss")
+TARGET_FILE: Final[Path] = Path("static/css/styles.css")
 
 
 # ── Platform helpers ──────────────────────────────────────────────────────────
