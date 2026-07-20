@@ -4,7 +4,8 @@
 // To upgrade: change the URL in scss.py → ACDN_URL constant, then rebuild.
 // Local cache lives at .tools/acdn/ — never edit it directly.
 // ─────────────────────────────────────────────────────────────────────────────
-@use "acdn/src/scss/main" as *;    // resolved via --load-path .tools in scss.py
+@use "acdn/src/scss/main";
+@use "acdn/src/scss/mixins" as *;    // exposes motion, std-thin, glass-elevated etc.
 
 
 // ─────────────────────────────────────────────────────────────────────────────
