@@ -40,6 +40,8 @@ jobs:
 
       - name: Freeze
         run: python freeze.py
+        env:
+          SKIP_CSS: "1"
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
