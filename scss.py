@@ -100,6 +100,11 @@ def ensure_acdn() -> Path:
 # ── Dart Sass ─────────────────────────────────────────────────────────────────
 
 def ensure_dart_sass() -> Path:
+    # If SASS_BIN is set (e.g. in CI after npm install -g sass), use it directly
+    sass_env = os.getenv("SASS_BIN")
+    if sass_env:
+        return Path(sass_env)
+
     binary = BIN_DIR / ("sass.bat" if platform.system().lower() == "windows" else "sass")
     if binary.exists():
         return binary
