@@ -133,6 +133,11 @@ def ensure_dart_sass() -> Path:
 # ── Lightning CSS ─────────────────────────────────────────────────────────────
 
 def ensure_lightningcss() -> Path:
+    # If LIGHTNINGCSS_BIN is set, use it directly
+    lcss_env = os.getenv("LIGHTNINGCSS_BIN")
+    if lcss_env:
+        return Path(lcss_env)
+
     name   = "lightningcss.exe" if platform.system().lower() == "windows" else "lightningcss"
     binary = BIN_DIR / name
     if binary.exists():
