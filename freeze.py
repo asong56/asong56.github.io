@@ -117,7 +117,7 @@ def verify(build: str) -> bool:
 if __name__ == "__main__":
     os.environ["FLASK_ENV"] = "production"
 
-    if not compile_scss():
+    if not os.getenv("SKIP_CSS") and not compile_scss():
         sys.exit(1)
 
     if not optimize_images():
