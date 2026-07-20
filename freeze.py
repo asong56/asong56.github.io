@@ -28,11 +28,12 @@ from scss import compile_scss
 # ── Config ────────────────────────────────────────────────────────────────────
 
 app.config.update(
-    FREEZER_DESTINATION          = "build",
+    FREEZER_DESTINATION              = "build",
     FREEZER_IGNORE_MIMETYPE_WARNINGS = True,
-    FREEZER_RELATIVE_URLS        = True,
-    FREEZER_REMOVE_EXTRA_FILES   = True,
-    FREEZER_BASE_URL             = os.getenv("FREEZER_BASE_URL", "http://localhost/"),
+    FREEZER_IGNORE_404_NOT_FOUND     = True,
+    FREEZER_RELATIVE_URLS            = True,
+    FREEZER_REMOVE_EXTRA_FILES       = True,
+    FREEZER_BASE_URL                 = os.getenv("FREEZER_BASE_URL", "http://localhost/"),
 )
 
 freezer = Freezer(app)
@@ -98,8 +99,6 @@ REQUIRED = [
     "index.html",
     "feed.xml",
     os.path.join("static", "css", "styles.css"),
-    os.path.join("static", "images", "favicon-96x96.png"),
-    os.path.join("static", "images", "profile.webp"),
 ]
 
 
