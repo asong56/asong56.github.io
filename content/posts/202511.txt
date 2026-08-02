@@ -1,8 +1,0 @@
----
-NAM: asong56
-REV: 20251115T103958Z
-LOC: Lexington, MA
-TAG: mood, insight
-LNG: en-US
----
-I still don’t have friends because my oral English is not so good, another reason is that I don’t have a phone. In early November, I had AMC10 and only got 85. I realized the defect in my study method, which is not being so serious to my schoolworks. I spent the whole November and December on studying CS50p and CS50x on my own and had 4 Github projects. I also learned how to use numpy and pandas to analyze data, and matplotlib and seaborn for visualization. I even pulled requests from a repository which has 200 stars through helping build a glassmorphism control panel.
