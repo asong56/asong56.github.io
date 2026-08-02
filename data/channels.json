@@ -1,8 +1,14 @@
 [
   {
-    "slug": "posts",
-    "label": "Posts",
+    "slug": "thoughts",
+    "label": "Thoughts",
     "description": "Things I'm thinking about.",
+    "nav": true
+  },
+  {
+    "slug": "notes",
+    "label": "Notes",
+    "description":"My study notes and resources",
     "nav": true
   }
 ]
