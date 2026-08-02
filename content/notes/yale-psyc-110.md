@@ -1,7 +1,6 @@
 ---
-REV: 20260812T000000Z
+REV: 20260712T000000Z
 TAG: psychology, notes
-LNG: en-US
 ---
 
 # PSYC 110 — Introduction to Psychology
