@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wild Ume</title>
+  <subtitle>Questioning obvious systems, finding simpler representations.</subtitle>
+  <link href="https://asong56.github.io/feed.xml" rel="self"/>
+  <link href="https://asong56.github.io/"/>
+  <id>https://asong56.github.io/</id>
+  
+  <updated>2026-08-02T18:04:08Z</updated>
+  
+  <author><name>Ansel Song</name></author>
+
+  
+  <entry>
+    <title>THE 56 LAWS OF SOFTWARE ENGINEERING</title>
+    <link href="https://asong56.github.io/notes/lawofsoftwareenginearing/"/>
+    <id>https://asong56.github.io/notes/lawofsoftwareenginearing/</id>
+    
+    <updated>2026-08-02T18:04:08Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>1. should I start a startup &amp; which type of people are suited to startup</title>
+    <link href="https://asong56.github.io/notes/startup-school/"/>
+    <id>https://asong56.github.io/notes/startup-school/</id>
+    
+    <updated>2026-08-02T09:38:44Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>昨天是一个里程碑，我发的hackernews的show hn获得17 points，并且rudoc获得20 stars + 17 forks，新增1个follower；记录一下之前Cicada带来的收益，是47 stars + 16 for</title>
+    <link href="https://asong56.github.io/notes/20260727/"/>
+    <id>https://asong56.github.io/notes/20260727/</id>
+    
+    <updated>2026-07-27T08:21:39Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>以我有限的词汇，无法表达我对chatgpt, gemini, claude的愤怒，我想，再这样下去，我会成为第一个由于使用ai而抑郁或者疯魔的人类。</title>
+    <link href="https://asong56.github.io/thoughts/20260724-llm/"/>
+    <id>https://asong56.github.io/thoughts/20260724-llm/</id>
+    
+    <updated>2026-07-24T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>看到outlook收到我的youtube daily mail，一个我自制的youtube订阅邮件之后，我发现163原来也是有审查机制的，很多邮件在163邮箱是没法接受的。比如我做的这个订阅，一般每天拉取一堆rss文章发过来，然后昨天拉取了</title>
+    <link href="https://asong56.github.io/thoughts/163-mail/"/>
+    <id>https://asong56.github.io/thoughts/163-mail/</id>
+    
+    <updated>2026-07-23T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>帝王术的要素：</title>
+    <link href="https://asong56.github.io/thoughts/the-book-of-lord-shang/"/>
+    <id>https://asong56.github.io/thoughts/the-book-of-lord-shang/</id>
+    
+    <updated>2026-07-23T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>今天看到视频讲解汉庭，如家，全季，亚朵，和传统五星级酒店，这才知道携程，如家，汉庭，全季都是季琦一手做起来的，亚朵是季琦的老部下耶律胤做起来的。如家和汉庭都是经济型快捷酒店，全季和亚朵都是面向新一代中高产阶层的酒店。从设计上可以看出这种酒店</title>
+    <link href="https://asong56.github.io/thoughts/20260721-hotel/"/>
+    <id>https://asong56.github.io/thoughts/20260721-hotel/</id>
+    
+    <updated>2026-07-21T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>中国向来是成王败寇，也就是说赢的人能够改写历史，控制现在，改变未来，导致人民骨子里就有竞争意识。再加上甲午战争之类的导致中国人目前的输赢竞争，不考虑过程和局限性，在生活和语言层面使用带有强烈胜负色彩的词汇</title>
+    <link href="https://asong56.github.io/thoughts/win-ology/"/>
+    <id>https://asong56.github.io/thoughts/win-ology/</id>
+    
+    <updated>2026-07-21T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>1644史观：中国衰落的原因</title>
+    <link href="https://asong56.github.io/thoughts/1644/"/>
+    <id>https://asong56.github.io/thoughts/1644/</id>
+    
+    <updated>2026-07-20T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>今天下午3:00是世界杯决赛。</title>
+    <link href="https://asong56.github.io/thoughts/20260719-world-cup-final/"/>
+    <id>https://asong56.github.io/thoughts/20260719-world-cup-final/</id>
+    
+    <updated>2026-07-19T15:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>英国队普遍都很帅啊，像是Rice, Gorden, 全都是典型的大帅哥！</title>
+    <link href="https://asong56.github.io/thoughts/20260715-semifinal-eng-arg/"/>
+    <id>https://asong56.github.io/thoughts/20260715-semifinal-eng-arg/</id>
+    
+    <updated>2026-07-15T08:02:36Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>Worker and human-like AI are not the same optimization target</title>
+    <link href="https://asong56.github.io/thoughts/20260715-worker-vs-human-ai/"/>
+    <id>https://asong56.github.io/thoughts/20260715-worker-vs-human-ai/</id>
+    
+    <updated>2026-07-15T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>昨晚烧了胡萝卜洋葱鸡汤，超级好吃</title>
+    <link href="https://asong56.github.io/thoughts/20260714-soup-and-jepa/"/>
+    <id>https://asong56.github.io/thoughts/20260714-soup-and-jepa/</id>
+    
+    <updated>2026-07-14T10:20:34Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>Inbound Marketing — Mastery Challenge</title>
+    <link href="https://asong56.github.io/notes/hubspot-mkt-inbound-mastery-challenge/"/>
+    <id>https://asong56.github.io/notes/hubspot-mkt-inbound-mastery-challenge/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>Inbound Marketing</title>
+    <link href="https://asong56.github.io/notes/hubspot-mkt-inbound/"/>
+    <id>https://asong56.github.io/notes/hubspot-mkt-inbound/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>🇩🇪 German</title>
+    <link href="https://asong56.github.io/notes/lang-german/"/>
+    <id>https://asong56.github.io/notes/lang-german/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>SAT 词根例词版</title>
+    <link href="https://asong56.github.io/notes/sat-root-affix-ex/"/>
+    <id>https://asong56.github.io/notes/sat-root-affix-ex/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>SAT 词根填空版</title>
+    <link href="https://asong56.github.io/notes/sat-root-affix-fill/"/>
+    <id>https://asong56.github.io/notes/sat-root-affix-fill/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>SAT 词根联想手册</title>
+    <link href="https://asong56.github.io/notes/sat-root-affix-imagine/"/>
+    <id>https://asong56.github.io/notes/sat-root-affix-imagine/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title>SAT 词根词缀速背手册</title>
+    <link href="https://asong56.github.io/notes/sat-root-affix-recite/"/>
+    <id>https://asong56.github.io/notes/sat-root-affix-recite/</id>
+    
+    <updated>2026-07-12T00:00:00Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+
+</feed>
