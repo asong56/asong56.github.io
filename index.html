@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <meta name="description" id="meta-desc" content="Developer portfolio" />
+  <link rel="stylesheet" href="src/tokens.css" />
+  <link rel="stylesheet" href="src/site.css" />
+</head>
+<body>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════
+       HERO — avatar, name, bio
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <header>
+      <figure id="gh-avatar" tabindex="0" aria-label="Avatar — click a few times">
+        <figcaption aria-hidden="true">·</figcaption>
+      </figure>
+      <address>
+        <p class="identity-name"   id="gh-name"><span class="skeleton" style="height:16px;width:140px;">&nbsp;</span></p>
+        <p class="identity-handle" id="gh-handle"><span class="skeleton" style="height:12px;width:80px;">&nbsp;</span></p>
+      </address>
+    </header>
+    <p id="gh-bio"></p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       RECENT COMMITS — muted vertical ticker
+  ═══════════════════════════════════════════ -->
+  <section id="activity">
+
+    <p class="section-label">Recent commits</p>
+    <ol id="commit-ticker" class="commit-ticker" aria-label="Recent commit activity">
+      <li><span class="skeleton" style="height:12px;width:70%;">&nbsp;</span></li>
+    </ol>
+
+    <section id="featured">
+      <p class="section-label">Featured</p>
+      <ol id="featured-list" aria-label="Top projects">
+        <li><span class="skeleton" style="height:14px;width:220px;">&nbsp;</span></li>
+      </ol>
+    </section>
+
+    <section id="recommended">
+      <p class="section-label">Recommended</p>
+      <a id="recommended-card" href="#" target="_blank" rel="noopener">
+        <article>
+          <p class="recommended-name" id="recommended-name">
+            <span class="skeleton" style="height:14px;width:160px;">&nbsp;</span>
+          </p>
+          <p class="recommended-desc" id="recommended-desc"></p>
+        </article>
+      </a>
+    </section>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LATEST THOUGHT
+  ═══════════════════════════════════════════ -->
+  <article id="thought">
+    <p class="section-label">Latest thought</p>
+    <time id="thought-date" datetime=""></time>
+    <h2 id="thought-title"></h2>
+    <p  id="thought-preview"></p>
+    <a  id="thought-link" class="read-more" href="#">read more →</a>
+  </article>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — dark, "exit to the outside world"
+═══════════════════════════════════════════ -->
+<footer>
+
+  <!-- section straddling the light/dark seam -->
+  <section id="music">
+    <p class="section-label">Listening to</p>
+    <nav class="music-scroller" aria-label="Music picks">
+      <ol class="music-row" id="music-row">
+        <li><span class="skeleton" style="height:112px;width:112px;display:block">&nbsp;</span></li>
+        <li><span class="skeleton" style="height:112px;width:112px;display:block">&nbsp;</span></li>
+        <li><span class="skeleton" style="height:112px;width:112px;display:block">&nbsp;</span></li>
+        <li><span class="skeleton" style="height:112px;width:112px;display:block">&nbsp;</span></li>
+      </ol>
+    </nav>
+  </section>
+
+  <!-- all projects — horizontal ticker -->
+  <aside class="ticker-band" aria-label="All projects">
+    <ol class="ticker-track" id="ticker-track" aria-hidden="true">
+      <!-- duplicated in JS for seamless loop -->
+    </ol>
+  </aside>
+
+  <!-- connect — terminal style -->
+  <section id="connect">
+    <p class="section-label">Connect</p>
+    <ol id="connect-list" class="connect-list" aria-label="External links"></ol>
+    <p class="prompt-line">
+      <span class="prompt">$</span>
+      <span id="prompt-output"></span><span class="prompt-cursor" aria-hidden="true"></span>
+    </p>
+  </section>
+
+</footer>
+
+<script src="src/yaml.js"></script>
+<script src="src/format.js"></script>
+<script src="src/dom.js"></script>
+<script src="src/site-season.js"></script>
+<script src="src/site-github.js"></script>
+<script src="src/site-thought.js"></script>
+<script src="src/site-music.js"></script>
+<script src="src/site-connect.js"></script>
+<script src="src/site-easter-avatar.js"></script>
+<script src="src/site-easter-birthday.js"></script>
+<script src="src/site-main.js"></script>
+</body>
+</html>

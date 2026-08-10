@@ -1,0 +1,137 @@
+/* ═══════════════════════════════════════════════════════════
+   tokens.css — fonts + design tokens only. No layout, no
+   components. Fonts live here since both pages share them.
+   Values match DESIGN.md's token reference. Dark mode switches
+   automatically via prefers-color-scheme, same variable names —
+   pages never redefine these, they only consume them.
+═══════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Switzer';
+  src: local('Switzer');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: local('Monaspace Neon');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  --color-bg:         oklch(98.5% 0.003 260);
+  --color-surface:    oklch(95%   0.004 260);
+  --color-border:     oklch(88%   0.005 260);
+  --color-text-muted: oklch(60%   0.008 260);
+  --color-text:       oklch(28%   0.008 260);
+  --color-accent:     oklch(52%   0.18  220);
+  --color-accent-dim: oklch(96%   0.04  220);
+
+  --font-sans: 'Switzer', 'Open Sans', ui-sans-serif, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Monaspace Neon', ui-monospace, 'Cascadia Code', monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.25rem;
+  --text-xl:   1.625rem;
+  --text-2xl:  2.5rem;
+
+  --space-4:  4px;
+  --space-8:  8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-96: 96px;
+
+  --radius-sm:   4px;
+  --radius-base: 8px;
+  --radius-lg:   12px;
+  --radius-pill: 50px;
+
+  --ease-out:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-snap:   cubic-bezier(0.6,  0.0,  0.0,  1.0);
+  --dur-fast:    120ms;
+  --dur-slow:    350ms;
+
+  --glass-bg:     rgba(255, 255, 255, 0.70);
+  --glass-border: rgba(255, 255, 255, 0.50);
+
+  --cursor-clickable:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%231a1a1a' fill-opacity='0.85'/%3E%3C/svg%3E") 8 8, pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-bg:         oklch(11%  0.003 260);
+    --color-surface:    oklch(16%  0.004 260);
+    --color-border:     oklch(24%  0.005 260);
+    --color-text-muted: oklch(60%  0.008 260);
+    --color-text:       oklch(88%  0.008 260);
+    --color-accent:     oklch(60%  0.16  220);
+    --color-accent-dim: oklch(18%  0.06  220);
+
+    --glass-bg:     rgba(28, 28, 30, 0.70);
+    --glass-border: rgba(255, 255, 255, 0.10);
+
+    --cursor-clickable:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23e8e8e8' fill-opacity='0.85'/%3E%3C/svg%3E") 8 8, pointer;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   base.css — reset + generic element defaults only.
+   No page-specific selectors (#hero, #stage, etc.) belong here.
+═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scrollbar-gutter: stable; overscroll-behavior-y: contain; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, button, [role='button'] { cursor: var(--cursor-clickable); }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* every transition/animation lives inside this query — the
+   reduced-motion rule, applied per rule instead of as a
+   blanket override at the end of the file */
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color var(--dur-fast) var(--ease-out); }
+}
+
+a:hover { color: var(--color-accent); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: var(--space-4);
+  border-radius: var(--radius-sm);
+}
+
+::selection { background: var(--color-accent-dim); color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

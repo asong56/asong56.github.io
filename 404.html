@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>404 · Lab</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="src/tokens.css">
+  <link rel="stylesheet" href="src/404.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     INTRO — full-screen typewriter → particles
+═══════════════════════════════════════════ -->
+<section id="intro" role="status" aria-live="polite" aria-label="Loading">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <p id="intro-terminal" aria-hidden="true"></p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PAGE
+═══════════════════════════════════════════ -->
+<nav id="return-home" aria-label="Return home">
+  <a href="/">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10 12L6 8l4-4"/>
+    </svg>
+    return home
+  </a>
+</nav>
+
+<main id="stage">
+
+  <article id="project-card" aria-label="Discovered project">
+
+    <header>
+      <h1 id="proj-name">
+        <span class="skeleton" style="height:1.4em;width:220px;display:block;">&nbsp;</span>
+      </h1>
+    </header>
+
+    <p id="proj-description">
+      <span class="skeleton" style="height:1em;width:100%;display:block;margin-bottom:6px;">&nbsp;</span>
+      <span class="skeleton" style="height:1em;width:65%;display:block;">&nbsp;</span>
+    </p>
+
+    <footer id="card-meta" aria-label="Project stats and links">
+      <!-- populated by JS: stars, forks, pages link, open link -->
+    </footer>
+
+  </article>
+
+  <button id="wander-btn" type="button" aria-label="Show another random project">
+    <i class="wander-icon" aria-hidden="true">⟳</i>
+    wander
+  </button>
+
+  <p id="stage-hint" aria-hidden="true">not featured on the main page</p>
+
+  <p id="error-msg">
+    could not reach github right now —
+    <a href="https://github.com/asong56" target="_blank" rel="noopener">browse directly ↗</a>
+  </p>
+
+</main>
+
+<script src="src/yaml.js"></script>
+<script src="src/format.js"></script>
+<script src="src/dom.js"></script>
+<script src="src/404-particles.js"></script>
+<script src="src/404-typewriter.js"></script>
+<script src="src/404-projects.js"></script>
+<script src="src/404-main.js"></script>
+</body>
+</html>
