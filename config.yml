@@ -1,17 +1,8 @@
-# ─────────────────────────────────────────────
-# Portfolio config
-# Read by scripts/update.js at build time.
-# ─────────────────────────────────────────────
+github: asong56
 
-github: asong56   # GitHub username
+# Format: https://api.github.com/repos/{owner}/{repo}/{path}
+notes_api: https://api.github.com/repos/asong56/notes/content/thoughts
 
-# Notes folder: GitHub API URL to a folder in any repo.
-# update.js lists files, finds the most recently committed one,
-# and bakes it into generated.json as "thought".
-# Format: https://api.github.com/repos/{owner}/{repo}/contents/{path}
-notes_api: https://api.github.com/repos/asong56/notes/contents/thoughts
-
-# Now section — things an API can't know, edited by hand
 now:
   listening:
     value: Brian Eno — Music for Airports
@@ -26,8 +17,6 @@ now:
     value: how much can be done with less
     sub: ""
 
-# Music — artists whose catalog is searched via iTunes API at build time.
-# update.js fetches one track per artist into generated.json.
 music:
   artists:
     - Brian Eno
@@ -37,23 +26,20 @@ music:
     - Jon Hopkins
     - Boards of Canada
 
-# Footer links (GitHub is added automatically from the API)
 links:
-  - label: Twitter
-    href: "https://twitter.com/"
-  - label: Email
-    href: "mailto:hi@example.com"
-  - label: RSS
-    href: "/feed.xml"
+  #- label: Twitter
+  #  href: "https://twitter.com/"
+  #- label: Email
+  #  href: "mailto:hi@example.com"
+  #- label: RSS
+  #  href: "/feed.xml"
 
-# ─────────────────────────────────────────────
-# 404 / Lab page
-# ─────────────────────────────────────────────
+
 not_found:
   intro_lines:
-    - "looking for that page..."
-    - "— not here."
-    - "here's something else instead."
-  type_speed: 55        # ms per character
-  line_pause: 400        # ms pause between lines
-  dissolve_duration: 1400 # ms for the particle dissolve
+    - "Scanning..."
+    - "Page not found."
+    - "Loading experiments..."
+  type_speed: 65
+  line_pause: 800
+  dissolve_duration: 1800
