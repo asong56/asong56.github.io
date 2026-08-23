@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T06:44:03.342Z",
+  "generated_at": "2026-08-23T06:45:49.208Z",
   "github": {
     "user": {
       "login": "asong56",
@@ -20,15 +20,15 @@
     },
     "repos": [
       {
-        "id": 1141823875,
-        "name": "Urban-Scaling-Simulation",
-        "description": "A quantitative sociology simulator modeling societal evolution via Urban Scaling Laws, Endogenous Growth Theory, and historical attrition models.",
-        "html_url": "https://github.com/asong56/Urban-Scaling-Simulation",
+        "id": 1313161914,
+        "name": "wispet",
+        "description": "Minimal, fast dictionary and translation tool.",
+        "html_url": "https://github.com/asong56/wispet",
         "homepage": "",
-        "stargazers_count": 2,
+        "stargazers_count": 0,
         "forks_count": 0,
-        "language": "Python",
-        "pushed_at": "2026-08-16T05:33:22Z",
+        "language": "Go",
+        "pushed_at": "2026-08-22T21:14:07Z",
         "has_pages": false
       },
       {
@@ -40,8 +40,32 @@
         "stargazers_count": 1,
         "forks_count": 0,
         "language": "Python",
-        "pushed_at": "2026-08-15T20:31:16Z",
+        "pushed_at": "2026-08-22T20:30:16Z",
         "has_pages": false
+      },
+      {
+        "id": 1141823875,
+        "name": "Urban-Scaling-Simulation",
+        "description": "A quantitative sociology simulator modeling societal evolution via Urban Scaling Laws, Endogenous Growth Theory, and historical attrition models.",
+        "html_url": "https://github.com/asong56/Urban-Scaling-Simulation",
+        "homepage": "",
+        "stargazers_count": 2,
+        "forks_count": 0,
+        "language": "Python",
+        "pushed_at": "2026-08-21T11:00:34Z",
+        "has_pages": false
+      },
+      {
+        "id": 1127878179,
+        "name": "asong56.github.io",
+        "description": "The mask long worn doth cleave unto the skin; To rip it thence must break the bone within.",
+        "html_url": "https://github.com/asong56/asong56.github.io",
+        "homepage": "https://asong56.github.io/",
+        "stargazers_count": 3,
+        "forks_count": 0,
+        "language": "JavaScript",
+        "pushed_at": "2026-08-16T06:44:04Z",
+        "has_pages": true
       },
       {
         "id": 1323416075,
@@ -77,30 +101,6 @@
         "forks_count": 0,
         "language": "Rust",
         "pushed_at": "2026-08-13T12:14:21Z",
-        "has_pages": false
-      },
-      {
-        "id": 1127878179,
-        "name": "asong56.github.io",
-        "description": "The mask long worn doth cleave unto the skin; To rip it thence must break the bone within.",
-        "html_url": "https://github.com/asong56/asong56.github.io",
-        "homepage": "https://asong56.github.io/",
-        "stargazers_count": 3,
-        "forks_count": 0,
-        "language": "JavaScript",
-        "pushed_at": "2026-08-13T00:03:10Z",
-        "has_pages": true
-      },
-      {
-        "id": 1313161914,
-        "name": "wispet",
-        "description": "Minimal, fast dictionary and translation tool.",
-        "html_url": "https://github.com/asong56/wispet",
-        "homepage": "",
-        "stargazers_count": 0,
-        "forks_count": 0,
-        "language": "Rust",
-        "pushed_at": "2026-08-13T00:01:51Z",
         "has_pages": false
       },
       {
@@ -160,7 +160,7 @@
         "stargazers_count": 2,
         "forks_count": 0,
         "language": "JavaScript",
-        "pushed_at": "2026-08-08T12:32:36Z",
+        "pushed_at": "2026-08-22T19:23:47Z",
         "has_pages": false
       },
       {
@@ -278,29 +278,29 @@
       1305906834
     ],
     "recent": {
-      "id": 1141823875,
-      "name": "Urban-Scaling-Simulation",
-      "description": "A quantitative sociology simulator modeling societal evolution via Urban Scaling Laws, Endogenous Growth Theory, and historical attrition models.",
-      "html_url": "https://github.com/asong56/Urban-Scaling-Simulation",
+      "id": 1313161914,
+      "name": "wispet",
+      "description": "Minimal, fast dictionary and translation tool.",
+      "html_url": "https://github.com/asong56/wispet",
       "homepage": "",
-      "stargazers_count": 2,
+      "stargazers_count": 0,
       "forks_count": 0,
-      "language": "Python",
-      "pushed_at": "2026-08-16T05:33:22Z",
+      "language": "Go",
+      "pushed_at": "2026-08-22T21:14:07Z",
       "has_pages": false
     }
   },
   "hidden_pool": [
     {
-      "id": 1141823875,
-      "name": "Urban-Scaling-Simulation",
-      "description": "A quantitative sociology simulator modeling societal evolution via Urban Scaling Laws, Endogenous Growth Theory, and historical attrition models.",
-      "html_url": "https://github.com/asong56/Urban-Scaling-Simulation",
+      "id": 1313161914,
+      "name": "wispet",
+      "description": "Minimal, fast dictionary and translation tool.",
+      "html_url": "https://github.com/asong56/wispet",
       "homepage": "",
-      "stargazers_count": 2,
+      "stargazers_count": 0,
       "forks_count": 0,
-      "language": "Python",
-      "pushed_at": "2026-08-16T05:33:22Z",
+      "language": "Go",
+      "pushed_at": "2026-08-22T21:14:07Z",
       "has_pages": false
     },
     {
@@ -312,7 +312,19 @@
       "stargazers_count": 1,
       "forks_count": 0,
       "language": "Python",
-      "pushed_at": "2026-08-15T20:31:16Z",
+      "pushed_at": "2026-08-22T20:30:16Z",
+      "has_pages": false
+    },
+    {
+      "id": 1141823875,
+      "name": "Urban-Scaling-Simulation",
+      "description": "A quantitative sociology simulator modeling societal evolution via Urban Scaling Laws, Endogenous Growth Theory, and historical attrition models.",
+      "html_url": "https://github.com/asong56/Urban-Scaling-Simulation",
+      "homepage": "",
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "language": "Python",
+      "pushed_at": "2026-08-21T11:00:34Z",
       "has_pages": false
     },
     {
@@ -352,18 +364,6 @@
       "has_pages": false
     },
     {
-      "id": 1313161914,
-      "name": "wispet",
-      "description": "Minimal, fast dictionary and translation tool.",
-      "html_url": "https://github.com/asong56/wispet",
-      "homepage": "",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "language": "Rust",
-      "pushed_at": "2026-08-13T00:01:51Z",
-      "has_pages": false
-    },
-    {
       "id": 1188688850,
       "name": "Diatom",
       "description": "A minimalist, privacy-first, local-AI browser.",
@@ -396,7 +396,7 @@
       "stargazers_count": 2,
       "forks_count": 0,
       "language": "JavaScript",
-      "pushed_at": "2026-08-08T12:32:36Z",
+      "pushed_at": "2026-08-22T19:23:47Z",
       "has_pages": false
     },
     {
